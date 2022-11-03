@@ -1,0 +1,12 @@
+<html>
+  <head>Albums List</head>
+  <body>
+    <h1>Albums</h1>
+    <%@album_array.each do |album|%>
+      <div>
+        <p>Title: <a href='/albums/<%=album.id%>'><%=album.title%>...</a></p>
+        <p>Release Year: <%=album.release_year%>.</p>
+      </div>
+    <%end%>
+  </body>
+</html>
