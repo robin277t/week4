@@ -9,7 +9,7 @@
 
   <h3>Add a new post</h3>
   <form method="post" action="/posts">
-    Title: <input type="text" name="content" />
+    Title: <input type="text" name="title" />
     Content: <input type="text" name="content" />
     Tags: <input type="text" name="tags" />
 
@@ -19,8 +19,8 @@
   <hr />
   <% @posts.each do |post| %>
     <div>
-      <h3><%= post.title %></h3>
-      <p><%= post.content %></p>
+      <h3><%= post.title unless post.title.include?("<script>") %></h3>
+      <p><%= post.content unless post.content.include?("<script>") %></p>
     </div>
   <% end %>
 </body>
